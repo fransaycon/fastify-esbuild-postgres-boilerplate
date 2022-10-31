@@ -1,1 +1,1 @@
-# Generated using FASTIFY-Generator
+# Fastify Boilerplate
