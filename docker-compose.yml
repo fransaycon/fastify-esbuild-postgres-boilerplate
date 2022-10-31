@@ -1,0 +1,15 @@
+version: '3'
+services:
+  entheon-server:
+    image: entheon-server
+    container_name: entheon-server
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./src:/app/src
+    ports:
+      - "8000:8000"
+    restart: on-failure
+    environment:
+      DATABASE_URL: $DATABASE_URL

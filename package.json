@@ -15,14 +15,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fastify/cors": "^8.1.1",
     "dotenv": "^16.0.3",
     "fastify": "^4.9.2",
-    "fastify-cors": "^6.1.0",
-    "fastify-oas": "^3.0.8",
-    "fastify-plugin": "4.3.0",
-    "mongodb": "^4.11.0",
-    "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.3.10"
+    "fastify-plugin": "4.3.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.10",
