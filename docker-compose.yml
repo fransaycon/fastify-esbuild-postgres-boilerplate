@@ -1,15 +1,46 @@
 version: '3'
 services:
-  entheon-server:
-    image: entheon-server
-    container_name: entheon-server
+  postgres:
+    image: postgres:15.0-alpine
+    container_name: fastify-server-db
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_db:/var/lib/postgresql/data
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: test
+  pgadmin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+    depends_on:
+      - postgres
+    ports:
+      - "5050:80"
+  fastify-server:
+    image: fastify-server
+    container_name: fastify-server
     build:
       context: .
       dockerfile: dev.Dockerfile
+    depends_on:
+      - postgres
     volumes:
       - ./src:/app/src
     ports:
       - "8000:8000"
-    restart: on-failure
+    restart: always
     environment:
-      DATABASE_URL: $DATABASE_URL
+      DATABASE_URL: postgres://admin:password@postgres:5432/test
+
+volumes:
+  postgres_db:
+  pgadmin:

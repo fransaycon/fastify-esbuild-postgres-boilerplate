@@ -8,4 +8,4 @@ server.listen(+PORT, "0.0.0.0", (err, address) => {
   console.log(`server listening on ${address}`)
 })
 
-module.exports = server
+export default server
