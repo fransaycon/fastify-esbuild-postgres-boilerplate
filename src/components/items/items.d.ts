@@ -1,11 +1,8 @@
 import { CommonMixin } from "../common"
 
-export interface ItemAttributes extends CommonMixin {
+export interface Item extends CommonMixin {
   name: string
   description: string
 }
 
-export type ItemCreationAtrributes = Pick<
-  ItemAttributes,
-  "name" | "description"
->
+export type UnsavedItem = Pick<Item, "name" | "description">
