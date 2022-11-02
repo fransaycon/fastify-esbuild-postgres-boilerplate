@@ -1,6 +1,6 @@
 {
   "name": "entheon-backend",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
     "build": "rm -rf build && tsx esbuild.ts",
     "start": "npm run build && node build",
     "lint": "lint-staged",
-    "cz": "cz",
+    "commit": "cz",
     "release": "standard-version --no-verify",
     "release:patch": "standard-version --no-verify --release-as patch"
   },
