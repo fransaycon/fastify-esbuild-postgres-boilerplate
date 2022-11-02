@@ -1,6 +1,4 @@
-import { CommonMixin } from "../common"
-
-export interface Item extends CommonMixin {
+export interface Item {
   name: string
   description: string
 }

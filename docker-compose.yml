@@ -3,15 +3,25 @@ services:
   postgres:
     image: postgres:15.0-alpine
     container_name: fastify-server-db
-    ports:
-      - 5432:5432
-    volumes:
-      - postgres_db:/var/lib/postgresql/data
     restart: always
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
       POSTGRES_DB: test
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_db:/var/lib/postgresql/data
+  postgres-test:
+    image: postgres:15.0-alpine
+    container_name: fastify-server-test-db
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: test_database
+    ports:
+      - 5433:5432
   pgadmin:
     container_name: pgadmin4_container
     image: dpage/pgadmin4
@@ -33,6 +43,7 @@ services:
       dockerfile: dev.Dockerfile
     depends_on:
       - postgres
+      - postgres-test
     volumes:
       - ./src:/app/src
     ports:
@@ -40,6 +51,7 @@ services:
     restart: always
     environment:
       DATABASE_URL: postgres://admin:password@postgres:5432/test
+      TEST_DATABASE_URL: postgres://admin:password@postgres-test:5432/test_database
 
 volumes:
   postgres_db:
