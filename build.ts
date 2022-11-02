@@ -1,7 +1,6 @@
 import glob from "tiny-glob"
 import { build } from "esbuild"
-
-(async function () {
+;(async function () {
   // Get all ts files
   const entryPoints = await glob("src/**/*.ts")
 
@@ -14,5 +13,6 @@ import { build } from "esbuild"
     platform: "node",
     format: "cjs",
     sourcemap: true,
+    external: ["knex"],
   })
 })()
