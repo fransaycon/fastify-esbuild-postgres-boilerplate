@@ -1,6 +1,6 @@
 import { UnsavedItem } from "../../components/items/items"
 import UserController from "../../components/items/items-controllers"
-import { FastifyWithKnex } from "common"
+import { FastifyWithKnex } from "../../common"
 import { FastifyRequest } from "fastify"
 
 type ItemsCreateRequest = FastifyRequest<{
