@@ -1,6 +1,6 @@
 {
   "name": "fastify-knex-postgres-boilerplate",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,11 @@
     "release": "standard-version --no-verify",
     "release:patch": "standard-version --no-verify --release-as patch"
   },
-  "keywords": ["fastify", "postgres", "typescript"],
+  "keywords": [
+    "fastify",
+    "postgres",
+    "typescript"
+  ],
   "author": "Franrey Anthony S. Saycon",
   "license": "ISC",
   "dependencies": {
