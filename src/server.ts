@@ -1,10 +1,10 @@
 import fastify from "fastify"
-
-import healthRoutes from "./routes/v1/health-routes"
 import fastifyCorsPlugin from "@fastify/cors"
-import itemRoutes from "./routes/v1/item-routes"
-import knexPlugin from "./plugins/knexPlugin"
-import ApiError from "./components/api-error"
+
+import ApiError from "@/components/api-error"
+import knexPlugin from "@/plugins/knexPlugin"
+import healthRoutes from "@/routes/v1/health-routes"
+import itemRoutes from "@/routes/v1/item-routes"
 
 function createServer() {
   const server = fastify()

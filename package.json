@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --watch './src/**/*.ts' --exec ts-node ./src/index.ts",
-    "build": "tsc",
-    "test": "jest --coverage",
-    "test:watch": "npm run test -- --watchAll",
+    "prepare": "husky install",
+    "dev": "tsx watch src",
+    "build": "rm -rf build && tsx esbuild.ts",
+    "start": "npm run build && node build",
     "lint": "lint-staged",
-    "commit": "git cz",
-    "knex": "knex"
+    "cz": "cz",
+    "release": "standard-version --no-verify",
+    "release:patch": "standard-version --no-verify --release-as patch"
   },
   "keywords": [],
   "author": "",
@@ -27,11 +28,16 @@
     "pg-hstore": "^2.3.4"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
+    "@commitlint/cz-commitlint": "^17.2.0",
     "@types/cors": "^2.8.10",
     "@types/jest": "^29.2.0",
     "@types/node": "^18.11.8",
     "@typescript-eslint/eslint-plugin": "^5.41.0",
     "@typescript-eslint/parser": "^5.41.0",
+    "commitizen": "^4.2.5",
+    "esbuild": "^0.15.12",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -41,12 +47,10 @@
     "lint-staged": "^13.0.3",
     "nodemon": "^2.0.7",
     "prettier": "^2.7.1",
+    "standard-version": "^9.5.0",
+    "tiny-glob": "^0.2.9",
     "ts-node": "^10.9.1",
+    "tsx": "^3.11.0",
     "typescript": "^4.8.4"
-  },
-  "lint-staged": {
-    "**/*.{ts}": [
-      "eslint --fix"
-    ]
   }
 }

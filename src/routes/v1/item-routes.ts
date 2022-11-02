@@ -1,5 +1,5 @@
-import { UnsavedItem } from "../../components/items/items"
-import UserController from "../../components/items/items-controllers"
+import { UnsavedItem } from "@/components/items/items"
+import UserController from "@/components/items/items-controllers"
 import { FastifyWithKnex } from "../../common"
 import { FastifyRequest } from "fastify"
 
