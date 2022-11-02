@@ -8,10 +8,35 @@ type ItemsCreateRequest = FastifyRequest<{
 }>
 
 export default function itemRoutes(server: FastifyWithKnex, options, next) {
-  server.post("/items", async (req: ItemsCreateRequest, res) => {
-    const unsavedItem = await UserController.create(server.knex, req.body)
-    res.send(unsavedItem)
-  })
+  server.post(
+    "/items",
+    {
+      schema: {
+        description:
+          "Create a test item with name and description without restrictions",
+        body: {
+          type: "object",
+          properties: {
+            name: { type: "string" },
+            description: { type: "string" },
+          },
+        },
+        response: {
+          200: {
+            description: "Successful response",
+            type: "object",
+            properties: {
+              id: { type: "number" },
+            },
+          },
+        },
+      },
+    },
+    async (req: ItemsCreateRequest, res) => {
+      const itemId = await UserController.create(server.knex, req.body)
+      res.send({ id: itemId })
+    }
+  )
 
   next()
 }

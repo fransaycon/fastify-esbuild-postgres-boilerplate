@@ -1,11 +1,15 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import createServer from "./server"
 
-const PORT = process.env.PORT || "8000"
-const server = createServer()
+async function run() {
+  const server = await createServer()
 
-server.listen(+PORT, "0.0.0.0", (err, address) => {
-  if (err) throw err
-  console.log(`server listening on ${address}`)
-})
+  await server.ready()
 
-export default server
+  server.listen({ port: 8000, host: "0.0.0.0" }, (err, address) => {
+    if (err) throw err
+    console.log(`server listening on ${address}`)
+  })
+}
+
+run()
