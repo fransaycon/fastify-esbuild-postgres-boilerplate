@@ -4,28 +4,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## 0.2.0 (2022-11-04)
 
-
-### ⚠ BREAKING CHANGES
-
-* 🧨 None
-
-✅ Closes: N/A
-* 🧨 None
-
-✅ Closes: N/A
-* 🧨 None
-
-✅ Closes: N/A
-* 🧨 None
-
-✅ Closes: N/A
-* 🧨 None
-
-✅ Closes: N/A
-* 🧨 None
-
-✅ Closes: N/A
-
 ### ✨ Features
 
 * 🎸 Add husky ([ce786e8](https://github.com/franreysaycon/fastify-esbuild-postgres-boilerplate/commit/ce786e8536d527aa1599ea2afa2c1573cf2beab2))
