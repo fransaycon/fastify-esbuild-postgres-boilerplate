@@ -1,4 +1,4 @@
-# Fastify+Esbuild+Postgres Boilerplate
+# Fastify+Esbuild+Postgres Boilerplate by Franrey Saycon
 
 ## Let the magic begin~
 You technically just need node+yarn and docker installed properly and a good internet ;)
