@@ -1,7 +1,7 @@
 {
   "name": "fastify-esbuild-postgres-boilerplate",
   "version": "0.1.3",
-  "description": "A fastify boilerplate built with esbuild and batteries incldued docker setup with postgres.",
+  "description": "A fastify boilerplate built with esbuild and batteries included docker setup with postgres.",
   "main": "index.js",
   "scripts": {
     "prepare": "husky install",
