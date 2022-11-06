@@ -1,7 +1,4 @@
 import knex, { Knex } from "knex"
-import dotenv from "dotenv"
-
-dotenv.config()
 
 function connectTestDatabase(): Knex {
   const knexInstance = knex({

@@ -1,7 +1,5 @@
 // Update with your config settings.
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const dotenv = require("dotenv")
-dotenv.config()
 
 /**
  * @type { Object.<string, import("knex").Knex.Config> }

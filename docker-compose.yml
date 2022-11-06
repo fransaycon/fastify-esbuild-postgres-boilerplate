@@ -46,6 +46,7 @@ services:
       - postgres-test
     volumes:
       - ./src:/app/src
+      - ./migrations:/app/migrations
     ports:
       - "8000:8000"
     restart: always

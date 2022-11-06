@@ -35,7 +35,7 @@ yarn release
 
 **To create migrations,**
 ```
-yarn knex migrate:make <insert migration name here>
+docker-compose run fastify-server yarn knex migrate:make <insert migration name here>
 ```
 
 ## What is included?

@@ -1,8 +1,5 @@
 import fp from "fastify-plugin"
 import knex from "knex"
-import dotenv from "dotenv"
-
-dotenv.config()
 
 function knexPlugin(server, options, next) {
   const knexConnection = knex({
