@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/franreysaycon/fastify-esbuild-postgres-boilerplate/compare/v0.2.0...v0.2.1) (2022-11-06)
+
+
+### 📝 Documentation
+
+* fix messy changelog ([0c42d0c](https://github.com/franreysaycon/fastify-esbuild-postgres-boilerplate/commit/0c42d0cc4d12574c8983b05ec7cde20114113035))
+
+
+### ✨ Features
+
+* use ajv for schema moving forward ([b5345eb](https://github.com/franreysaycon/fastify-esbuild-postgres-boilerplate/commit/b5345eb0ad2052e1897997a4651b69f5d93c30b4))
+
+
+### ♻️ Code Refactoring
+
+* remove dotenv dependency ([b8d504b](https://github.com/franreysaycon/fastify-esbuild-postgres-boilerplate/commit/b8d504b79e70a79a9a38012fe0c61c41479f8b2d))
+
+
+### 🚚 Chores
+
+* change all res to reply to be consistent with fastify concepts ([69d134e](https://github.com/franreysaycon/fastify-esbuild-postgres-boilerplate/commit/69d134e23d8fed2676f0158b3af0433250991309))
+* move cors to plugin folder ([0fb7a5e](https://github.com/franreysaycon/fastify-esbuild-postgres-boilerplate/commit/0fb7a5ece50ff5e0224ef3b6309fa5a08d095ad3))
+* polish unused options and fix yarn lock with fixed versions ([35d80df](https://github.com/franreysaycon/fastify-esbuild-postgres-boilerplate/commit/35d80df3d8bcbe37c0120ef46f44eb2affe48028))
+
 ## 0.2.0 (2022-11-04)
 
 ### ✨ Features
