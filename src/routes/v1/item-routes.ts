@@ -7,7 +7,7 @@ type ItemsCreateRequest = FastifyRequest<{
   Body: UnsavedItem
 }>
 
-export default function itemRoutes(server: FastifyWithKnex, options, next) {
+export default function itemRoutes(server: FastifyWithKnex, _options, next) {
   server.post(
     "/items",
     {
