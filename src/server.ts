@@ -1,5 +1,4 @@
 import fastify from "fastify"
-import fastifyCorsPlugin from "@fastify/cors"
 import fastifyAutoload from "@fastify/autoload"
 
 import ApiError from "@/components/api-error"
@@ -12,7 +11,6 @@ async function createServer() {
       plugins: [[ajvKeywords, ["transform"]]],
     },
   })
-  server.register(fastifyCorsPlugin)
 
   server.register(fastifyAutoload, {
     dir: path.join(__dirname, "plugins"),
