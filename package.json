@@ -27,6 +27,7 @@
     "@fastify/cors": "8.1.1",
     "@fastify/swagger": "^8.1.0",
     "@fastify/swagger-ui": "^1.1.0",
+    "ajv-keywords": "^5.1.0",
     "dotenv": "16.0.3",
     "fastify": "4.9.2",
     "fastify-plugin": "4.3.0",

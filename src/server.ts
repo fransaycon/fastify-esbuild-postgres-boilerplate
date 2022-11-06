@@ -4,9 +4,14 @@ import fastifyAutoload from "@fastify/autoload"
 
 import ApiError from "@/components/api-error"
 import path from "path"
+import ajvKeywords from "ajv-keywords"
 
 async function createServer() {
-  const server = fastify()
+  const server = fastify({
+    ajv: {
+      plugins: [[ajvKeywords, ["transform"]]],
+    },
+  })
   server.register(fastifyCorsPlugin)
 
   server.register(fastifyAutoload, {
@@ -17,15 +22,17 @@ async function createServer() {
     dir: path.join(__dirname, "routes"),
   })
 
-  server.setErrorHandler((error, req, res) => {
-    if (error instanceof ApiError) {
-      res.status(error.statusCode).send({
+  server.setErrorHandler((error, _request, reply) => {
+    if (error.validation) {
+      reply.status(400).send(error.validation)
+    } else if (error instanceof ApiError) {
+      reply.status(error.statusCode).send({
         message: error.message,
         payload: error.payload,
       })
     } else {
       console.error(error)
-      res.status(500).send({
+      reply.status(500).send({
         message: "Something went wrong. Please try again.",
       })
     }

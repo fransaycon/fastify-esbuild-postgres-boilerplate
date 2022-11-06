@@ -17,9 +17,24 @@ export default function itemRoutes(server: FastifyWithKnex, options, next) {
         body: {
           type: "object",
           properties: {
-            name: { type: "string" },
-            description: { type: "string" },
+            name: {
+              type: "string",
+              allOf: [
+                { transform: ["trim"] },
+                { minLength: 5 },
+                { maxLength: 255 },
+              ],
+            },
+            description: {
+              type: "string",
+              allOf: [
+                { transform: ["trim"] },
+                { minLength: 5 },
+                { maxLength: 2000 },
+              ],
+            },
           },
+          required: ["name", "description"],
         },
         response: {
           200: {
