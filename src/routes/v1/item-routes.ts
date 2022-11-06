@@ -47,9 +47,9 @@ export default function itemRoutes(server: FastifyWithKnex, options, next) {
         },
       },
     },
-    async (req: ItemsCreateRequest, res) => {
-      const itemId = await UserController.create(server.knex, req.body)
-      res.send({ id: itemId })
+    async (request: ItemsCreateRequest, reply) => {
+      const itemId = await UserController.create(server.knex, request.body)
+      reply.send({ id: itemId })
     }
   )
 

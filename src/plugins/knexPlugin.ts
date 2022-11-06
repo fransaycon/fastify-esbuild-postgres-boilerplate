@@ -1,7 +1,7 @@
 import fp from "fastify-plugin"
 import knex from "knex"
 
-function knexPlugin(server, options, next) {
+function knexPlugin(server, _options, next) {
   const knexConnection = knex({
     client: "pg",
     connection: process.env.DATABASE_URL,

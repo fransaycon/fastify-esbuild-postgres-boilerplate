@@ -15,8 +15,8 @@ export default function healthRoutes(server, _options, next) {
         },
       },
     },
-    (_req, res) => {
-      res.send({ status: "ok" })
+    (_request, reply) => {
+      reply.send({ status: "ok" })
     }
   )
 

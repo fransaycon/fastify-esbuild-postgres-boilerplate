@@ -11,10 +11,10 @@ export default fp<FastifyDynamicSwaggerOptions>(async (fastify) => {
       deepLinking: false,
     },
     uiHooks: {
-      onRequest: function (request, reply, next) {
+      onRequest: function (_request, _reply, next) {
         next()
       },
-      preHandler: function (request, reply, next) {
+      preHandler: function (_request, _reply, next) {
         next()
       },
     },
