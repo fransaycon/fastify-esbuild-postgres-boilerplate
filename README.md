@@ -1,12 +1,12 @@
 # Fastify+Esbuild+Postgres Boilerplate by Franrey Saycon
 
 ## Let the magic begin~
-You technically just need node+yarn and docker installed properly and a good internet ;)
+You technically just need node+pnpm and docker installed properly and a good internet ;)
 
 **To make all the nice things work properly, (installs everything you need and prepares commmit automations)**
 ```
-yarn
-yarn prepare
+pnpm install
+pnpm prepare
 ```
 
 **To turn on everything,**
@@ -19,23 +19,23 @@ Now create a GET request to `localhost:8000/v1` and it should return `{"status":
 
 **To run tests,**
 ```
-docker-compose run fastify-server yarn test
+docker-compose run fastify-server pnpm test
 ```
 
 **To commit and trigger commitizen / lint staging,**
 ```
-yarn commit
+pnpm commit
 ```
-TIP: I highly suggest you check your lint stage first with `yarn lint` since you might need to redo everything if a check failed. (sorta a punishment >:P).
+TIP: I highly suggest you check your lint stage first with `pnpm lint` since you might need to redo everything if a check failed. (sorta a punishment >:P).
 
 **To release something and update the CHANGELOG automatically complete with tags,**
 ```
-yarn release
+pnpm release
 ```
 
 **To create migrations,**
 ```
-docker-compose run fastify-server yarn knex migrate:make <insert migration name here>
+docker-compose run fastify-server pnpm knex migrate:make <insert migration name here>
 ```
 
 ## What is included?
@@ -50,12 +50,12 @@ docker-compose run fastify-server yarn knex migrate:make <insert migration name 
 ## Deployment
 To prepare the artifacts with esbuild,
 ```
-yarn build
+pnpm build
 ```
 
 To run migrations,
 ```
-yarn knex migrate:latest
+pnpm knex migrate:latest
 ```
 
 Your server should be available at `build/index.js` and runnable with node normally. (of course don't use node purely unless you intend a Kubernetes or Docker Swarm setup.)
